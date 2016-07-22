@@ -215,6 +215,9 @@ td {
 /* Header */
 
 header {
+	background-image: url("../images/multibit128.png");
+	background-repeat: no-repeat;
+		background-position: right; 
 	background-color: #171717;
 	color: #FDFDFB;
   width:170px;
