@@ -90,6 +90,32 @@
 start MutliBlack HD, "Restore wallet" with the <strong>words and timestamp you saved on paper</strong>
 
 <h3>
+<a id="trouble" class="anchor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to get to Blackcoins only with your 12 words and Timestamp(without MultiBlack)</h3>
+<strong>Beacause you wallet is HD,</strong> you can derive all your addresses private keys and import them to reference blackcoin client.
+
+<ol>
+<li> Use <a   href="https://github.com/janko33bd/bip39/tree/blackcoin">this tool</a> to derive your addresses and their corresponding priv keys, by entering your 12-word passphrase, and setting BIP32 derivation path to: m/0'</li>
+
+<li> This will yield a sequence of public addresses. Read down from the top of the list, this is the order in which your HD wallet generates pub keys, so the addy(s) you used will start from the top.</li>
+
+<li> For each public address, you will see a corresponding private key in the neighboring column. Highlight, copy & paste your used addys and their priv keys into a text editor and close out of the tool.</li>
+
+<li> Open and sync the wallet client you will be importing into. Note: For the import operation, you will need to fully UNLOCK your wallet (not just 'for staking only', but completely). Having done that, go to Help>Debug window, console tab. You will be using the 'importprivkey' command, as follows:
+<br /><br />
+importprivkey <privkeygoeshere> <label> true
+<br /><br />
+((leaving out the <><> do-hickies)).
+<br /><br />
+Hit enter. Your wallet will immediately begin a rescan and the gui will appear to hang - don't worry, it's just working on the rescan. BE PATIENT, this can easily take 15 mins or more. You'll see when it's done, and that your import is reflected in a new coin balance and corresponding transaction history. (Delete console history as your privkey is still showing in plaintext when you get to this point. ;)</li>
+
+<li> Go back to console tab and enter 'walletlock'</li>
+
+<li> Lastly, clean up well. You don't want to leave those privkeys lying around, e.g. in notepad or still in clipboard).</li>
+</ol>
+
+
+
+<h3>
 <a id="dnate" class="anchor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Donate</h3>
 <strong>BEuffQ7UKb4PZaPwpXgeVM6TmUU6m96gS5</strong>
 
